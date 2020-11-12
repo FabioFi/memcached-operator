@@ -73,7 +73,7 @@ Operators provide:
 - A place to encapsulate knowledge from field engineers and spread it to all users, not just one or two.
 
 
-# Operator Best Practices
+# Operator Best Practices (community operators)
 
 ## Development
 An Operator should manage a single type of application, essentially following the UNIX principle: do one thing and do it well. \
