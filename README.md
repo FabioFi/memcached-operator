@@ -34,7 +34,7 @@ https://sdk.operatorframework.io/docs/building-operators/golang/quickstart/
 
 
 
-# Golang Based Operator Tutorial
+# Golang Based Operator Tutorial - notes
 
 ## What’s in a basic project?
 
