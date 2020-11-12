@@ -59,3 +59,17 @@ Last, but certainly not least, Kubebuilder scaffolds out the basic entrypoint of
 A namespace-scoped operator watches and manages resources in a single Namespace, whereas a cluster-scoped operator watches and manages resources cluster-wide. \
 An operator should be cluster-scoped if it watches resources that can be created in any Namespace. An operator should be namespace-scoped if it is intended to be flexibly deployed. This scope permits decoupled upgrades, namespace isolation for failures and monitoring, and differing API definitions. \
 By default, operator-sdk init scaffolds a cluster-scoped operator. This document details conversion of default operator projects to namespaced-scoped operators. Before proceeding, be aware that your operator may be better suited as cluster-scoped. For example, the cert-manager operator is often deployed with cluster-scoped permissions and watches so that it can manage and issue certificates for an entire cluster.
+
+# THEORY
+
+## What are Operators?
+More technically, Operators are a method of packaging, deploying, and managing a Kubernetes application.
+
+## Why use Operators?
+Operators provide:
+- Repeatability of installation and upgrade.
+- Constant health checks of every system component.
+- Over-the-air (OTA) updates for OpenShift components and ISV content.
+- A place to encapsulate knowledge from field engineers and spread it to all users, not just one or two.
+
+
