@@ -73,3 +73,14 @@ Operators provide:
 - A place to encapsulate knowledge from field engineers and spread it to all users, not just one or two.
 
 
+# Operator Best Practices
+
+## Development
+An Operator should manage a single type of application, essentially following the UNIX principle: do one thing and do it well. \
+If an application consists of multiple different tiers or components, multiple Operators should be written for each of them. If the application for example consists of Redis, AMQ and MySQL, there should be 3 Operators, not one. \
+CRD can only be owned by a single Operator, shared CRDs should be owned by a separate Operator
+
+## Running On-Cluster
+Like all containers on Kubernetes, Operators shouldn’t need to run as root unless absolutely necessary. Operators should come with their own ServiceAccount and not rely on the default. \
+Operators should not self-register their CRDs. These are global resources and careful consideration needs to be taken when setting those up. Also this requires the Operator to have global privileges which is potentially dangerous compared to that little extra convenience. \
+An Operator should not deploy another Operator - an additional component on cluster should take care of this (OLM). \
