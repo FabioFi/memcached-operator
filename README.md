@@ -53,6 +53,8 @@ Each other directory contains a different piece of configuration, refactored out
 
 Last, but certainly not least, Kubebuilder scaffolds out the basic entrypoint of our project: main.go. Let’s take a look at that next...
 
+## Operators Scope
 
-
-
+A namespace-scoped operator watches and manages resources in a single Namespace, whereas a cluster-scoped operator watches and manages resources cluster-wide.
+An operator should be cluster-scoped if it watches resources that can be created in any Namespace. An operator should be namespace-scoped if it is intended to be flexibly deployed. This scope permits decoupled upgrades, namespace isolation for failures and monitoring, and differing API definitions.
+By default, operator-sdk init scaffolds a cluster-scoped operator. This document details conversion of default operator projects to namespaced-scoped operators. Before proceeding, be aware that your operator may be better suited as cluster-scoped. For example, the cert-manager operator is often deployed with cluster-scoped permissions and watches so that it can manage and issue certificates for an entire cluster.
