@@ -20,6 +20,7 @@ sudo snap install go –classic
 sudo apt-get install mercurial
 sudo apt install make
 sudo apt-get install build-essential
+https://book.kubebuilder.io/quick-start.html#installation
 
 ### Kubebuilder prerequisites
 os=$(go env GOOS)
