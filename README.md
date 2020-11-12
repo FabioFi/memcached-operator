@@ -20,7 +20,6 @@ sudo snap install go –classic
 sudo apt-get install mercurial
 sudo apt install make
 sudo apt-get install build-essential
-https://book.kubebuilder.io/quick-start.html#installation
 
 ### Kubebuilder prerequisites
 os=$(go env GOOS)
@@ -32,8 +31,9 @@ export PATH=$PATH:/usr/local/kubebuilder/bin
 ### Quickstart go-based operator
 https://sdk.operatorframework.io/docs/building-operators/golang/quickstart/
 
-
-
+### other prerequisites (again)
+https://book.kubebuilder.io/quick-start.html#installation
+sudo snap install kustomize
 
 # Golang Based Operator Tutorial - notes
 
